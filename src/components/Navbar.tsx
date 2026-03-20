@@ -23,10 +23,13 @@ export const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => { setIsOpen(false); }, [location.pathname]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -43,15 +46,23 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-2' : 'bg-transparent py-4'}`}>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? 'glass-nav py-2 shadow-[0_4px_30px_rgba(0,0,0,0.4)]'
+          : 'bg-gradient-to-b from-navy-950/80 to-transparent py-5 backdrop-blur-sm'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="p-2 bg-medical-600 rounded-lg group-hover:rotate-12 transition-transform">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="relative p-2 rounded-xl overflow-hidden group-hover:scale-105 transition-transform duration-300"
+               style={{ background: 'linear-gradient(135deg, #0090e8, #005799)', boxShadow: '0 4px 16px rgba(0,144,232,0.4)' }}>
             <HeartPulse className="text-white w-5 h-5 sm:w-6 sm:h-6" />
           </div>
           <div>
-            <h1 className="font-heading font-bold text-lg sm:text-xl leading-none text-slate-900">Omni RK</h1>
-            <p className="text-[10px] uppercase tracking-widest text-medical-600 font-bold">Hospital</p>
+            <h1 className="font-heading font-bold text-lg sm:text-xl leading-none text-white">Omni RK</h1>
+            <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: '#f5bc00' }}>Hospital</p>
           </div>
         </Link>
 
@@ -61,14 +72,20 @@ export const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-medical-600 ${
-                location.pathname === link.path ? 'text-medical-600' : 'text-slate-600'
+              className={`text-sm font-medium transition-all duration-300 relative group ${
+                location.pathname === link.path
+                  ? 'text-white'
+                  : 'text-white/60 hover:text-white'
               }`}
             >
               {link.name}
+              <span className={`absolute -bottom-0.5 left-0 h-[1.5px] bg-gradient-to-r from-gold-400 to-gold-600 transition-all duration-300 ${
+                location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
+              }`} />
             </Link>
           ))}
-          <div className="flex items-center gap-3 pl-4 border-l border-slate-200">
+
+          <div className="flex items-center gap-3 pl-4 border-l border-white/10">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -76,30 +93,30 @@ export const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="text-slate-400 hover:text-medical-600 transition-colors"
+                className="text-white/40 hover:text-gold-400 transition-colors duration-300"
               >
-                {social.isSvg ? (
-                  <social.icon size={18} />
-                ) : (
-                  <social.icon size={18} />
-                )}
+                <social.icon size={16} />
               </a>
             ))}
           </div>
-          <a href="tel:8179189919" className="btn-primary py-2 px-4 lg:px-5 text-sm flex items-center gap-2">
-            <Phone size={16} />
-            <span className="hidden lg:inline">Emergency</span>
+
+          <a
+            href="tel:8179189919"
+            className="btn-gold flex items-center gap-2 py-2 px-4 text-xs font-bold animate-pulse-gold"
+          >
+            <Phone size={14} />
+            <span className="hidden lg:inline">Emergency Call</span>
             <span className="lg:hidden">Call</span>
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-slate-900 p-1"
+          className="md:hidden text-white/80 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition-colors"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={26} /> : <Menu size={26} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -107,17 +124,24 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-0 w-full bg-white border-b shadow-xl px-6 py-6 flex flex-col gap-5"
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden absolute top-full left-0 w-full px-5 py-6 flex flex-col gap-4"
+            style={{
+              background: 'rgba(8,12,56,0.97)',
+              backdropFilter: 'blur(20px)',
+              borderBottom: '1px solid rgba(245,188,0,0.15)',
+              boxShadow: '0 16px 48px rgba(0,0,0,0.5)',
+            }}
           >
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-base font-semibold transition-colors ${
-                  location.pathname === link.path ? 'text-medical-600' : 'text-slate-900'
+                className={`text-base font-semibold transition-colors py-1 ${
+                  location.pathname === link.path ? 'text-gold-400' : 'text-white/80 hover:text-white'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -125,8 +149,7 @@ export const Navbar = () => {
               </Link>
             ))}
 
-            {/* Social icons in mobile menu */}
-            <div className="flex items-center gap-4 pt-2 border-t border-slate-100">
+            <div className="flex items-center gap-3 pt-3 border-t border-white/10">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -134,16 +157,19 @@ export const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="p-2 bg-slate-100 rounded-full text-slate-600 hover:bg-medical-100 hover:text-medical-600 transition-colors"
+                  className="p-2 rounded-full text-white/50 hover:text-gold-400 hover:bg-gold-400/10 transition-all"
                 >
                   <social.icon size={18} />
                 </a>
               ))}
             </div>
 
-            <a href="tel:8179189919" className="btn-primary w-full text-center flex items-center justify-center gap-2 mt-1">
-              <Phone size={18} />
-              <span>Call Emergency</span>
+            <a
+              href="tel:8179189919"
+              className="btn-gold w-full py-3 text-sm font-bold flex items-center justify-center gap-2 mt-1"
+            >
+              <Phone size={16} />
+              <span>Call Emergency: +91 81791 89919</span>
             </a>
           </motion.div>
         )}
@@ -151,3 +177,4 @@ export const Navbar = () => {
     </nav>
   );
 };
+
