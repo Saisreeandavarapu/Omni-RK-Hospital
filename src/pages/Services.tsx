@@ -2,19 +2,20 @@ import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { ServicesSection } from '../components/ServicesSection';
 import { Link } from 'react-router-dom';
+import { PremiumImage } from '../components/PremiumImage';
 
 export const Services = () => {
   return (
-    <div className="pt-32 pb-20">
-      <div className="section-padding py-10">
-        <nav className="flex mb-8 text-sm font-medium text-slate-500 items-center gap-2">
+    <div className="pt-28 sm:pt-32 pb-20">
+      <div className="px-4 sm:px-6 max-w-7xl mx-auto py-4">
+        <nav className="flex mb-6 text-sm font-medium text-slate-500 items-center gap-2">
           <Link to="/" className="hover:text-medical-600 transition-colors">Home</Link>
           <ChevronRight size={14} />
           <span className="text-medical-600">Surgical Specializations</span>
         </nav>
       </div>
 
-      <ServicesSection />
+      <ServicesSection className="px-4 sm:px-6 max-w-7xl mx-auto pb-16 sm:pb-20 pt-2 sm:pt-4" />
 
       {/* Testimonials Section */}
       <section className="section-padding bg-slate-50">
@@ -73,11 +74,12 @@ export const Services = () => {
                      Book Your Consultation
                   </Link>
                </div>
-               <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-                  <img 
-                    src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YNqBeDa0NNS0aV4y/rohit-3-dJoZajkwE1U7X2JD.jpeg" 
-                    alt="Dr. Rohit Mudadla" 
-                    className="w-full h-auto"
+               <div className="rounded-[32px] sm:rounded-[40px] shadow-xl">
+                  <PremiumImage
+                    src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YNqBeDa0NNS0aV4y/rohit-3-dJoZajkwE1U7X2JD.jpeg"
+                    alt="Dr. Rohit Mudadla"
+                    containerClassName="max-w-sm sm:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
+                    imgWrapperClassName="rounded-[32px] sm:rounded-[40px] border-4 border-white aspect-[4/5] sm:aspect-auto"
                   />
                </div>
             </div>

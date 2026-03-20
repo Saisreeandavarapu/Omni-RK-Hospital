@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
-import { Activity, Shield, Zap, Info, ChevronRight, Heart, LifeBuoy } from 'lucide-react';
+import { Activity, Shield, Zap, Info, ChevronRight, Heart, LifeBuoy, ZoomIn } from 'lucide-react';
+import { useLightbox } from '../context/LightboxContext';
 
-export const ServicesSection = () => {
+export const ServicesSection = ({ className = "section-padding" }: { className?: string }) => {
+  const { openLightbox } = useLightbox();
   const services = [
     {
       title: "Hepatopancreatobiliary (HPB) Surgery",
@@ -43,7 +45,7 @@ export const ServicesSection = () => {
   const surgeryImage = "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YNqBeDa0NNS0aV4y/img_20250506_124413_699-YBg7Q8BZ22u84vy0.jpg";
 
   return (
-    <section className="section-padding overflow-hidden">
+    <section className={`${className} overflow-hidden`}>
       {/* Header */}
       <div className="text-center mb-14 sm:mb-20">
         <motion.div
@@ -115,15 +117,26 @@ export const ServicesSection = () => {
       </div>
 
       {/* Infrastructure CTA */}
-      <div className="relative rounded-[32px] sm:rounded-[48px] overflow-hidden group">
+      <div 
+        className="relative rounded-[32px] sm:rounded-[48px] overflow-hidden group cursor-pointer shadow-navy"
+        onClick={() => openLightbox(surgeryImage, 'Surgical Theatre')}
+      >
         <img
           src={surgeryImage}
           className="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:scale-105 transition-transform duration-1000"
           alt="Surgical Theatre"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #080c38 0%, rgba(8,12,56,0.75) 60%, rgba(0,63,110,0.4) 100%)' }} />
+        <div className="absolute inset-0 pointer-events-none z-0" style={{ background: 'linear-gradient(135deg, #080c38 0%, rgba(8,12,56,0.75) 60%, rgba(0,63,110,0.4) 100%)' }} />
+        
+        {/* Interactive Hover Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20"
+             style={{ background: 'rgba(8,12,56,0.25)' }}>
+          <div className="p-3 rounded-full shadow-lg scale-90 group-hover:scale-100 transition-transform duration-300" style={{ background: 'rgba(255,255,255,0.95)' }}>
+            <ZoomIn size={32} style={{ color: '#0090e8' }} />
+          </div>
+        </div>
 
-        <div className="relative z-10 p-8 sm:p-14 lg:p-20">
+        <div className="relative z-10 p-8 sm:p-14 lg:p-20 pointer-events-none">
           <div className="badge-medical mb-6">
             <Activity size={13} />State-of-the-Art
           </div>

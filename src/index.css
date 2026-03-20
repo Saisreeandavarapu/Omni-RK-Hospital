@@ -15,12 +15,18 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   }
 }
 
 @layer components {
+
   /* ─── Navigation ─────────────────────────── */
   .glass-nav {
     @apply backdrop-blur-xl border-b border-white/10 shadow-navy;
@@ -29,87 +35,88 @@
 
   /* ─── Buttons ────────────────────────────── */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center px-7 py-3 rounded-xl font-semibold text-sm
-           overflow-hidden transition-all duration-300 active:scale-95;
+    @apply relative inline-flex items-center justify-center px-7 py-3 rounded-xl font-semibold text-sm overflow-hidden transition-all duration-300 active:scale-95;
     background: linear-gradient(135deg, #0090e8 0%, #005799 100%);
     color: #fff;
-    box-shadow: 0 4px 24px rgba(0,144,232,0.35);
+    box-shadow: 0 4px 24px rgba(0, 144, 232, 0.35);
   }
+
   .btn-primary:hover {
-    box-shadow: 0 6px 32px rgba(0,144,232,0.5);
+    box-shadow: 0 6px 32px rgba(0, 144, 232, 0.5);
     transform: translateY(-1px);
   }
 
   .btn-gold {
-    @apply relative inline-flex items-center justify-center px-7 py-3 rounded-xl font-bold text-sm
-           overflow-hidden transition-all duration-300 active:scale-95 text-navy-950;
+    @apply relative inline-flex items-center justify-center px-7 py-3 rounded-xl font-bold text-sm overflow-hidden transition-all duration-300 active:scale-95 text-navy-950;
     background: linear-gradient(135deg, #f5bc00 0%, #ffd033 50%, #d49900 100%);
     background-size: 200% 200%;
-    box-shadow: 0 4px 24px rgba(245,188,0,0.35);
+    box-shadow: 0 4px 24px rgba(245, 188, 0, 0.35);
   }
+
   .btn-gold:hover {
     animation: shimmer 1.5s ease infinite;
-    box-shadow: 0 6px 32px rgba(245,188,0,0.5);
+    box-shadow: 0 6px 32px rgba(245, 188, 0, 0.5);
     transform: translateY(-1px);
   }
 
   .btn-secondary {
-    @apply px-7 py-3 bg-transparent border border-white/20 text-white font-semibold rounded-xl
-           hover:bg-white/10 transition-all duration-300 backdrop-blur-sm active:scale-95;
+    @apply px-7 py-3 bg-transparent border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm active:scale-95;
   }
 
   .btn-outline {
-    @apply px-7 py-3 bg-white/5 border border-medical-300/30 text-medical-300 font-semibold rounded-xl
-           hover:bg-medical-600/20 hover:border-medical-400 transition-all duration-300 active:scale-95;
+    @apply px-7 py-3 bg-white/5 border border-medical-300/30 text-medical-300 font-semibold rounded-xl hover:bg-medical-600/20 hover:border-medical-400 transition-all duration-300 active:scale-95;
   }
 
   /* ─── Layout ─────────────────────────────── */
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-28 px-4 sm:px-6 max-w-7xl mx-auto;
+    @apply py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto;
   }
 
   /* ─── Typography ─────────────────────────── */
   .heading-xl {
     @apply font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
   }
+
   .heading-lg {
     @apply font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight;
   }
+
   .heading-md {
     @apply font-heading text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight;
   }
 
   /* ─── Premium Cards ──────────────────────── */
   .glass-card {
-    background: rgba(255,255,255,0.06);
+    background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .premium-card {
     @apply bg-white rounded-3xl border border-slate-100/80 transition-all duration-500;
-    box-shadow: 0 2px 20px rgba(8,12,56,0.06);
+    box-shadow: 0 2px 20px rgba(8, 12, 56, 0.06);
   }
+
   .premium-card:hover {
-    box-shadow: 0 16px 48px rgba(8,12,56,0.14), 0 4px 16px rgba(0,144,232,0.08);
+    box-shadow: 0 16px 48px rgba(8, 12, 56, 0.14), 0 4px 16px rgba(0, 144, 232, 0.08);
     transform: translateY(-4px);
   }
 
   /* ─── Badge ──────────────────────────────── */
   .badge-gold {
     @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest;
-    background: linear-gradient(135deg, rgba(245,188,0,0.15), rgba(212,153,0,0.1));
+    background: linear-gradient(135deg, rgba(245, 188, 0, 0.15), rgba(212, 153, 0, 0.1));
     color: #d49900;
-    border: 1px solid rgba(245,188,0,0.3);
+    border: 1px solid rgba(245, 188, 0, 0.3);
   }
 
   .badge-medical {
     @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest;
-    background: rgba(0,144,232,0.12);
+    background: rgba(0, 144, 232, 0.12);
     color: #22b0ff;
-    border: 1px solid rgba(0,144,232,0.25);
+    border: 1px solid rgba(0, 144, 232, 0.25);
   }
 
   /* ─── Section divider ────────────────────── */
@@ -139,9 +146,16 @@
     background: linear-gradient(135deg, #080c38 0%, #0e1763 40%, #003f6e 100%);
   }
 
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-* { box-sizing: border-box; }
-
+* {
+  box-sizing: border-box;
+}

@@ -27,10 +27,10 @@ const reasons = [
 
 export const About = () => {
   return (
-    <div className="pt-20 sm:pt-32 pb-16 sm:pb-20" style={{ background: '#f8faff' }}>
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-20" style={{ background: '#f8faff' }}>
 
       {/* Breadcrumb */}
-      <div className="section-padding py-6 sm:py-8">
+      <div className="px-4 sm:px-6 max-w-7xl mx-auto py-4">
         <nav className="flex mb-0 text-sm font-medium text-slate-400 items-center gap-2">
           <Link to="/" className="hover:text-medical-600 transition-colors">Home</Link>
           <ChevronRight size={14} />
@@ -45,14 +45,14 @@ export const About = () => {
       {/* Why Choose Us */}
       <div className="section-padding pt-0">
         <div className="rounded-[32px] sm:rounded-[48px] overflow-hidden relative"
-             style={{ background: 'linear-gradient(135deg, #080c38 0%, #0e1763 60%, #003f6e 100%)' }}>
+          style={{ background: 'linear-gradient(135deg, #080c38 0%, #0e1763 60%, #003f6e 100%)' }}>
           {/* Grid */}
           <div className="absolute inset-0 opacity-5"
-               style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+            style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full blur-[100px] opacity-20"
-               style={{ background: '#0090e8' }} />
+            style={{ background: '#0090e8' }} />
           <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-[100px] opacity-15"
-               style={{ background: '#f5bc00' }} />
+            style={{ background: '#f5bc00' }} />
 
           <div className="relative z-10 p-8 sm:p-14 lg:p-20">
             <div className="badge-gold mb-6">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AboutDoctor } from '../components/AboutDoctor';
 import { ServicesSection } from '../components/ServicesSection';
 import { VideoSection } from '../components/VideoSection';
+import { PremiumImage } from '../components/PremiumImage';
 
 const CountUp = ({ value, suffix = '' }: { value: string; suffix?: string }) => (
   <span>{value}{suffix}</span>
@@ -27,12 +28,12 @@ export const Home = () => {
         {/* Ambient glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 -left-32 w-[600px] h-[600px] rounded-full opacity-20"
-               style={{ background: 'radial-gradient(circle, #0090e8 0%, transparent 70%)' }} />
+            style={{ background: 'radial-gradient(circle, #0090e8 0%, transparent 70%)' }} />
           <div className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] rounded-full opacity-15"
-               style={{ background: 'radial-gradient(circle, #f5bc00 0%, transparent 70%)' }} />
+            style={{ background: 'radial-gradient(circle, #f5bc00 0%, transparent 70%)' }} />
           {/* Grid overlay */}
           <div className="absolute inset-0 opacity-5"
-               style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+            style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         </div>
 
         <div className="section-padding relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-28 sm:pt-32">
@@ -89,31 +90,28 @@ export const Home = () => {
             transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
             className="relative mt-6 lg:mt-0"
           >
-            {/* Glow behind image */}
-            <div className="absolute -inset-4 rounded-[40px] opacity-40 blur-2xl"
-                 style={{ background: 'linear-gradient(135deg, #0090e8 0%, #f5bc00 100%)' }} />
-            
-            <div className="relative rounded-[32px] sm:rounded-[40px] overflow-hidden border-2 border-white/10 shadow-glass group"
-                 style={{ background: 'rgba(255,255,255,0.04)' }}>
-              <img
-                src={heroImage}
-                alt="Dr. Rohit Mudadla"
-                className="w-full h-auto group-hover:scale-105 transition-transform duration-700"
-              />
-              {/* Doctor info card */}
-              <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7 p-4 sm:p-5 rounded-2xl flex items-center gap-3 border border-white/10"
-                   style={{ background: 'rgba(8,12,56,0.85)', backdropFilter: 'blur(20px)' }}>
-                <div className="p-2 rounded-xl" style={{ background: 'linear-gradient(135deg, #0090e8, #005799)' }}>
-                  <Shield size={20} className="text-white" />
+            <PremiumImage
+              src={heroImage}
+              alt="Dr. Rohit Mudadla"
+              className="object-top"
+              containerClassName="max-w-sm sm:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
+              imgWrapperClassName="rounded-[32px] sm:rounded-[40px] border-2 border-white/10 aspect-[4/5] sm:aspect-auto"
+              withGlow={true}
+              overlayContent={
+                <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7 p-4 sm:p-5 rounded-2xl flex items-center gap-3 border border-white/10"
+                  style={{ background: 'rgba(8,12,56,0.85)', backdropFilter: 'blur(20px)' }}>
+                  <div className="p-2 rounded-xl" style={{ background: 'linear-gradient(135deg, #0090e8, #005799)' }}>
+                    <Shield size={20} className="text-white" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-white text-sm sm:text-base leading-tight">Dr. Rohit Mudadla</h3>
+                    <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider mt-0.5" style={{ color: '#f5bc00' }}>
+                      M.S., M.Ch. · Surgical Gastroenterology
+                    </p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-bold text-white text-sm sm:text-base leading-tight">Dr. Rohit Mudadla</h3>
-                  <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider mt-0.5" style={{ color: '#f5bc00' }}>
-                    M.S., M.Ch. · Surgical Gastroenterology
-                  </p>
-                </div>
-              </div>
-            </div>
+              }
+            />
           </motion.div>
         </div>
 
@@ -139,7 +137,7 @@ export const Home = () => {
                 className="premium-card p-5 sm:p-7 text-center"
               >
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center mx-auto mb-4"
-                     style={{ background: `${stat.color}14`, border: `1px solid ${stat.color}28` }}>
+                  style={{ background: `${stat.color}14`, border: `1px solid ${stat.color}28` }}>
                   <stat.icon size={20} style={{ color: stat.color }} />
                 </div>
                 <div className="font-heading text-2xl sm:text-3xl font-bold text-navy-950 mb-1">
@@ -167,11 +165,11 @@ export const Home = () => {
       <section className="relative overflow-hidden py-20 sm:py-28">
         <div className="absolute inset-0 bg-dark-hero" />
         <div className="absolute inset-0 opacity-10"
-             style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+          style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20"
-             style={{ background: '#0090e8' }} />
+          style={{ background: '#0090e8' }} />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15"
-             style={{ background: '#f5bc00' }} />
+          style={{ background: '#f5bc00' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

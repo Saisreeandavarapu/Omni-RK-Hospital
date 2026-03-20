@@ -3,8 +3,8 @@ import { Phone, MapPin, Clock, Send, Activity } from 'lucide-react';
 
 export const Contact = () => {
   return (
-    <div className="pt-24 sm:pt-32 pb-16 sm:pb-24" style={{ background: '#f8faff' }}>
-      <div className="section-padding">
+    <div className="pt-28 sm:pt-32 pb-16 sm:pb-24" style={{ background: '#f8faff' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">

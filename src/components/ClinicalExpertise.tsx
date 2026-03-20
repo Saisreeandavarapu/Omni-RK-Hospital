@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Microscope, Award } from 'lucide-react';
+import { PremiumImage } from './PremiumImage';
 
 export const ClinicalExpertise = () => {
   const cases = [
@@ -77,17 +78,22 @@ export const ClinicalExpertise = () => {
             className="group premium-card overflow-hidden flex flex-col"
           >
             {/* Image */}
-            <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
-              <img
+            <div className="relative overflow-hidden group/img w-full rounded-t-3xl">
+              <PremiumImage
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                containerClassName="w-full aspect-[4/3]"
+                imgWrapperClassName="w-full h-full rounded-none"
+                className="grayscale-[0.3] group-hover:grayscale-0"
+                overlayContent={
+                  <>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                         style={{ background: 'linear-gradient(to top, rgba(8,12,56,0.5), transparent)' }} />
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-30"
+                         style={{ background: 'linear-gradient(90deg, #f5bc00, #0090e8)' }} />
+                  </>
+                }
               />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                   style={{ background: 'linear-gradient(to top, rgba(8,12,56,0.5), transparent)' }} />
-              {/* Gold accent line */}
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                   style={{ background: 'linear-gradient(90deg, #f5bc00, #0090e8)' }} />
             </div>
 
             <div className="p-6 flex-1">
