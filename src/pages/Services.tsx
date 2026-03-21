@@ -78,7 +78,7 @@ export const Services = () => {
               <PremiumImage
                 src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YNqBeDa0NNS0aV4y/rohit-3-dJoZajkwE1U7X2JD.jpeg"
                 alt="Dr. Rohit Mudadla"
-                containerClassName="max-w-sm sm:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
+                containerClassName="max-w-[240px] sm:max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
                 imgWrapperClassName="rounded-[32px] sm:rounded-[40px] border-4 border-white aspect-[4/5] sm:aspect-auto"
               />
             </div>
