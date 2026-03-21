@@ -63,27 +63,27 @@ export const Services = () => {
       </section>
 
       <div className="section-padding">
-         <div className="bg-medical-50 rounded-[48px] p-12 lg:p-20 border border-medical-100">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-               <div>
-                  <h2 className="heading-lg mb-6">Need a <span className="text-medical-600">Specialist Opinion?</span></h2>
-                  <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                     If you are experiencing persistent digestive issues, abdominal pain, or have been diagnosed with a condition requiring surgical intervention, consult with Dr. Rohit Mudadla for an expert assessment.
-                  </p>
-                  <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
-                     Book Your Consultation
-                  </Link>
-               </div>
-               <div className="rounded-[32px] sm:rounded-[40px] shadow-xl">
-                  <PremiumImage
-                    src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YNqBeDa0NNS0aV4y/rohit-3-dJoZajkwE1U7X2JD.jpeg"
-                    alt="Dr. Rohit Mudadla"
-                    containerClassName="max-w-sm sm:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
-                    imgWrapperClassName="rounded-[32px] sm:rounded-[40px] border-4 border-white aspect-[4/5] sm:aspect-auto"
-                  />
-               </div>
+        <div className="bg-medical-50 rounded-[48px] p-12 lg:p-20 border border-medical-100">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="heading-lg mb-6">Need a <span className="text-medical-600">Specialist Opinion?</span></h2>
+              <p className="text-slate-600 text-lg mb-8 leading-relaxed">
+                If you are experiencing persistent digestive issues, abdominal pain, or have been diagnosed with a condition requiring surgical intervention, consult with Dr. Rohit Mudadla for an expert assessment.
+              </p>
+              <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+                Book Your Consultation
+              </Link>
             </div>
-         </div>
+            <div className="rounded-[32px] sm:rounded-[40px] shadow-xl">
+              <PremiumImage
+                src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YNqBeDa0NNS0aV4y/rohit-3-dJoZajkwE1U7X2JD.jpeg"
+                alt="Dr. Rohit Mudadla"
+                containerClassName="max-w-sm sm:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
+                imgWrapperClassName="rounded-[32px] sm:rounded-[40px] border-4 border-white aspect-[4/5] sm:aspect-auto"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

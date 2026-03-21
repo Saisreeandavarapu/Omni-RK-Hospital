@@ -42,7 +42,7 @@ export const Footer = () => {
       <div className="divider-gold opacity-30" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-14">
 
           {/* Brand */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-1">

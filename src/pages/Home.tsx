@@ -36,7 +36,7 @@ export const Home = () => {
             style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         </div>
 
-        <div className="section-padding relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-28 sm:pt-32">
+        <div className="section-padding relative z-10 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-16 items-center pt-28 sm:pt-32">
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -94,7 +94,7 @@ export const Home = () => {
               src={heroImage}
               alt="Dr. Rohit Mudadla"
               className="object-top"
-              containerClassName="max-w-sm sm:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
+              containerClassName="max-w-[280px] sm:max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
               imgWrapperClassName="rounded-[32px] sm:rounded-[40px] border-2 border-white/10 aspect-[4/5] sm:aspect-auto"
               withGlow={true}
               overlayContent={
@@ -126,7 +126,7 @@ export const Home = () => {
       {/* ═══ STATS ══════════════════════════════════════════ */}
       <section className="py-12 sm:py-16 bg-f8faff">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -172,7 +172,7 @@ export const Home = () => {
           style={{ background: '#f5bc00' }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div>
               <div className="badge-medical mb-6">
                 <Activity size={13} />Expert Surgical Care

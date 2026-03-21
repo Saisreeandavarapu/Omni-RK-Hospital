@@ -9,7 +9,7 @@ export const AboutDoctor = ({ condensed = false }: { condensed?: boolean }) => {
   if (condensed) {
     return (
       <section className="section-padding overflow-hidden" style={{ background: '#f8faff' }}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -27,7 +27,7 @@ export const AboutDoctor = ({ condensed = false }: { condensed?: boolean }) => {
               src={doctorImage}
               alt="Dr. Rohit Mudadla"
               className="object-top"
-              containerClassName="max-w-sm sm:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
+              containerClassName="max-w-[280px] sm:max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md mx-auto aspect-[4/5] sm:aspect-auto"
               imgWrapperClassName="rounded-[32px] sm:rounded-[40px] border-4 border-white aspect-[4/5] sm:aspect-auto"
               overlayContent={
                 <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7 p-4 sm:p-5 rounded-2xl hidden sm:flex items-center gap-3 backdrop-blur-xl"
@@ -109,7 +109,7 @@ export const AboutDoctor = ({ condensed = false }: { condensed?: boolean }) => {
       </div>
 
       {/* Main grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch mb-16 sm:mb-28">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-20 items-stretch mb-16 sm:mb-28">
         {/* Clinical Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -119,8 +119,7 @@ export const AboutDoctor = ({ condensed = false }: { condensed?: boolean }) => {
         >
           <PremiumImage
             src={clinicalImage}
-            alt="Dr. Rohit in Clinic"
-            containerClassName="w-full h-[400px] lg:h-full lg:min-h-[500px]"
+            containerClassName="w-full h-[350px] md:h-full md:min-h-[400px] lg:min-h-[500px]"
             imgWrapperClassName="rounded-[32px] sm:rounded-[48px] w-full h-full"
             overlayContent={
               <>
@@ -193,7 +192,7 @@ export const AboutDoctor = ({ condensed = false }: { condensed?: boolean }) => {
         <div className="absolute inset-0 opacity-5"
           style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Professional{' '}
