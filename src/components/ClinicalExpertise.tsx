@@ -67,7 +67,7 @@ export const ClinicalExpertise = () => {
       </div>
 
       {/* Cases grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 pb-20">
         {cases.map((item, i) => (
           <motion.div
             key={i}
@@ -88,9 +88,9 @@ export const ClinicalExpertise = () => {
                 overlayContent={
                   <>
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                         style={{ background: 'linear-gradient(to top, rgba(8,12,56,0.5), transparent)' }} />
+                      style={{ background: 'linear-gradient(to top, rgba(8,12,56,0.5), transparent)' }} />
                     <div className="absolute bottom-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-30"
-                         style={{ background: 'linear-gradient(90deg, #f5bc00, #0090e8)' }} />
+                      style={{ background: 'linear-gradient(90deg, #f5bc00, #0090e8)' }} />
                   </>
                 }
               />

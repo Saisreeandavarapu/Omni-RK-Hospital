@@ -9,7 +9,7 @@ export const AboutDoctor = ({ condensed = false }: { condensed?: boolean }) => {
   if (condensed) {
     return (
       <section className="section-padding overflow-hidden" style={{ background: '#f8faff' }}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center ">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -115,18 +115,24 @@ export const AboutDoctor = ({ condensed = false }: { condensed?: boolean }) => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="relative h-full"
+          className="relative w-full"
         >
           <PremiumImage
             src={clinicalImage}
-            containerClassName="w-full h-[350px] md:h-full md:min-h-[400px] lg:min-h-[500px]"
-            imgWrapperClassName="rounded-[32px] sm:rounded-[48px] w-full h-full"
+            containerClassName="w-full h-[500px]"  // fixed 400px height
+            imgWrapperClassName="w-full h-full rounded-[32px] sm:rounded-[48px] object-cover" // fill container nicely
             overlayContent={
               <>
-                <div className="absolute inset-0 max-h-full"
-                  style={{ background: 'linear-gradient(to top, rgba(8,12,56,0.7), transparent 50%)' }} />
-                <div className="absolute bottom-8 left-8 right-8 sm:bottom-12 sm:left-12 sm:right-12 text-white">
-                  <h3 className="text-xl sm:text-2xl font-heading font-bold mb-2">Expert Consultations</h3>
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(to top, rgba(8,12,56,0.7), transparent 50%)',
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 sm:bottom-12 sm:left-12 sm:right-12 text-white">
+                  <h3 className="text-xl sm:text-2xl font-heading font-bold mb-2">
+                    Expert Consultations
+                  </h3>
                   <p className="text-white/70 leading-relaxed text-sm sm:text-base">
                     Dr. Rohit Mudadla focuses on patient-centric care, ensuring tailored treatment plans for every individual.
                   </p>

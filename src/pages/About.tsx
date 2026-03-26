@@ -27,7 +27,7 @@ const reasons = [
 
 export const About = () => {
   return (
-    <div className="pt-28 sm:pt-32 pb-16 sm:pb-20" style={{ background: '#f8faff' }}>
+    <div className="pt-20 sm:pt-32 pb-16 sm:pb-20" style={{ background: '#f8faff' }}>
 
       {/* Breadcrumb */}
       <div className="px-4 sm:px-6 max-w-7xl mx-auto py-4">
